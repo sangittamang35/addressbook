@@ -21,7 +21,7 @@ node{
             sh "sudo docker login -u cybersolvedocker  -p ${dockerpwd}"
       
 }
-   sh 'sudo docker push prabhu4029/myapp2:2.1.22'
+   sh 'sudo docker push cybersolvedocker/myapp2:2.1.22'
     }
     stage ('Run tomcatapp'){
     sh 'sudo docker run -p 8081:8081 -d --name myapp2 cybersolvedocker/myapp2:2.1.22'   
