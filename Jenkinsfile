@@ -24,6 +24,6 @@ node{
    sh 'docker push cybersolvedocker/myapp2:2.1.22'
     }
     stage ('Run tomcatapp'){
-    sh 'docker run -p 8081:8081 -d --name myapp2 cybersolvedocker/myapp2:2.1.22'   
+    sh 'docker run -p 8181:8181 -d --name myapp2 cybersolvedocker/myapp2:2.1.22'   
   }
 }
