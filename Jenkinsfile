@@ -1,6 +1,6 @@
 node{
     stage('Git upload'){
-        git credentialsId: 'demo', url: 'https://github.com/Prabhu4tx/addressbook'
+        git credentialsId: 'centos' url: 'git@github.com:sangittamang35/addressbook.git'
         
     }
     stage('Maven build'){
