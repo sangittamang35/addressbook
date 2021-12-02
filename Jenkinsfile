@@ -13,17 +13,17 @@ node{
     stage ('docker build')
     {
       // sh  "docker version"
-        sh " docker build -t cybersolvedocker/myapp2:2.1.22 ."
+        sh " docker build -t samtam/myapp2:2.1.22 ."
     }
     stage ('push docker image')
     {
         withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]) {
-            sh "docker login -u cybersolvedocker  -p ${dockerpwd}"
+            sh "docker login -u samtam -p ${dockerpwd}"
       
 }
-   sh 'docker push cybersolvedocker/myapp2:2.1.22'
+   sh 'docker push samtam/myapp2:2.1.22'
     }
     stage ('Run tomcatapp'){
-    sh 'docker run -p 8181:8181 -d --name myapp2 cybersolvedocker/myapp2:2.1.22'   
+    sh 'docker run -p 8181:8181 -d --name myapp2 samtam/myapp2:2.1.22'   
   }
 }
