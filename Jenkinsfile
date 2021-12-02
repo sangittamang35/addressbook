@@ -1,8 +1,8 @@
 node{
     stage('Git upload'){
-        git credentialsId: 'centos' url: 'git@github.com:sangittamang35/addressbook.git'
-        
+        git credentialsId: 'centos',  url: 'git@github.com:sangittamang35/addressbook.git'
     }
+
     stage('Maven build'){
         def MavenHome = tool name: 'maven', type: 'maven'
         def mvnCMD = "${MavenHome}/bin/mvn"
