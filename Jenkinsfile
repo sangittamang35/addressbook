@@ -17,7 +17,7 @@ node{
     }
     stage ('push docker image')
     {
-        withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpass)]) {
+        withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpass')]) {
             sh "docker login -u samtam -p ${dockerpass}"
       
 }
