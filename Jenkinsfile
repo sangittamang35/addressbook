@@ -17,8 +17,8 @@ node{
     }
     stage ('push docker image')
     {
-        withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]) {
-            sh "docker login -u samtam -p ${dockerpwd}"
+        withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpass)]) {
+            sh "docker login -u samtam -p ${dockerpass}"
       
 }
    // sh 'docker push samtam/myapp2:2.1.22'
