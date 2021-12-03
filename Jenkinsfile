@@ -18,10 +18,10 @@ node{
     stage ('push docker image')
     {
         withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpass')]) {
-            sh 'docker login -u samtam -p "$dockerpass"}'
+            sh 'docker login -u samtam -p "$dockerpass"'
       
 }
-   // sh 'docker push samtam/myapp2:2.1.22'
+    sh 'docker push samtam/myapp2:2.1.22'
     }
     stage ('Run tomcatapp'){
     sh 'docker run -p 8181:8181 -d --name myapp2 samtam/myapp2:2.1.22'   
